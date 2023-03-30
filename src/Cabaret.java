@@ -11,6 +11,9 @@ public class Cabaret {
         return name;
     }
 
+    public ArrayList<Performer> getPerformers(){
+        return performers;
+    }
     public ArrayList<Performer> getPerfomer(){
         return performers;
     }
@@ -27,6 +30,7 @@ public class Cabaret {
             performers.add(performer);
             return true;
         }
+        return true;
     }
 
     public boolean removePerformer(Performer performer){
@@ -56,7 +60,7 @@ return false;
                 older.add(performers);
             }
         }
-        return performers;
+        return older;
     }
 
     public void groupRehearsal(){
@@ -66,6 +70,17 @@ return false;
                 performers.rehearse(false);
             }else{
                 performers.rehearse();
+            }
+        }
+    }
+    public void cabaretShow(){
+        for(Performer performers: performers){
+            System.out.println("Welcome to the cabaret! Next act up " + performers.getName());
+            if(performers instanceof Performer || performers instanceof Comedian){
+                performers.perform();
+            }else{
+                Dancer temp = (Dancer) performers;
+                temp.pirouette(2);
             }
         }
     }

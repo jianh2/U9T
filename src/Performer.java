@@ -35,7 +35,10 @@ public class Performer {
   public void rehearse() {
     System.out.println("Rehearsing for the big show!");
   }
-  
+
+  public void rehearse(boolean performAfter){
+    System.out.println("Rehearsing for the big show!");
+  }
   public void callAgent() {
     System.out.println("I am calling my agent! Siri, call " + agent.getName());
   }
